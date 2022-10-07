@@ -2,20 +2,20 @@ import http from "http"
 import {RequestPaths} from "./config/request"
 import {writeEvent} from "./util/response"
 
-const port: number = 9080;
+const port: number = 9080
 
 const server = http.createServer((request, response) => {
-    /*console.log(request.method);
-    console.log(request.url);
-    console.log(request.statusCode);
-    console.log(request.statusMessage);
-    console.log(request.rawHeaders);*/
+    /*console.log(request.method)
+    console.log(request.url)
+    console.log(request.statusCode)
+    console.log(request.statusMessage)
+    console.log(request.rawHeaders)*/
 
     /*response.statusCode = 200
     response.setHeader('Content-Type', 'text/html')
     response.end('<h1>Hello World!!!</h1>')*/
 
-    console.log(request.url);
+    console.log(request.url)
 
     if (request.url === RequestPaths.sseTest) {
         response.statusCode = 200
@@ -38,8 +38,8 @@ const server = http.createServer((request, response) => {
             }))
         }, 1000)
     }
-});
+})
 
 server.listen(port, () => {
     console.log(`SSE Server started and running at port ${port}`)
-});
+})

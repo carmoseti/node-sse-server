@@ -5,23 +5,23 @@
 
     <script type="text/javascript">
         window.onload = () => {
-            const source = new EventSource(`http://localhost:9080/sse/test`);
+            const source = new EventSource(`http://localhost:9080/sse/test`)
 
             source.addEventListener('open', () => {
-                console.log('SSE opened!');
-            });
+                console.log('SSE opened!')
+            })
 
             source.addEventListener('INITIATE_ACK', (e) => {
-                console.log(e.data);
-            });
+                console.log(e.data)
+            })
 
             source.addEventListener('TIME_INTERVAL', (e) => {
-                console.log(e.data);
-            });
+                console.log(e.data)
+            })
 
             source.addEventListener('error', (e) => {
-                console.error('Error: ', e);
-            });
+                console.error('Error: ', e)
+            })
         }
     </script>
 
